@@ -20,7 +20,7 @@ await res.status(200).json({client});  }
 } 
 
 //display all client
-exports.viewClient = async (req,, res)=>{
+exports.viewClient = async (req, res)=>{
   let list = [];
   const clients = await Client.find();
   for(client of clients):
