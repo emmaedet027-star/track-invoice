@@ -1,10 +1,10 @@
-const Invoice = require('/model/invoice');
-const Client = require('/model/client');
+const Invoice = require('../model/invoice');
+const Client = require('../model/client');
 
 // Create invoice 
 exports.createInvoice = async (req, res)=>{
   try{
-     const invoice = await Invoice.create(
+     const invoice = await Invoice.create({
      userId: req.userId,
      clientId: req.params.id,
      item: item,
@@ -13,10 +13,10 @@ exports.createInvoice = async (req, res)=>{
      dueDate: date,
      payStatus: payment-status,
      status: invoice-status 
-);
+});
 const user = await User.findOne({_id: req.userId});
-user.usage.invoicesCreated = ++;
-await res.status(200);  }
+user.usage.invoicesCreated++;
+await res.status(200).json('successful');  }
   catch(err){
   console.log(err);
 } 
@@ -33,7 +33,7 @@ exports.editInvoice = async(req, res)=>{
     await Invoice.findByIdAndUpdate(
       req.params.id,
       req.body);
-      await res.status(200);
+      await res.status(200).json('successful');
   }
   catch(err){
     conole.log(err);
@@ -119,7 +119,7 @@ exports.sendEmail = async(req, res)=>{
     await job.now();
     await job.save();
     const user = await User.findOne({_id: req.userId});
-user.usage.emailsSent = ++;
+user.usage.emailsSent++;
   }
   catch(err){
     console.log(err);
