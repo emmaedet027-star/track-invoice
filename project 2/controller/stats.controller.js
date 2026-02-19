@@ -1,6 +1,6 @@
-const Invoice = require('/model/invoice');
-const Client = require('/model/client');
-const User = require('/model/user');
+const Invoice = require('../model/invoice');
+const Client = require('../model/client');
+const User = require('../model/user');
 
 // statistics
 exports.statsDashboard = async(req, res)=>{
