@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require(jsonwebtoken');
-const User = require('/model/user');
-const authMiddleware = require(/'middleware/authMiddleware');
+const User = require('../model/user');
+const authMiddleware = require('/middleware/authMiddleware');
 
 exports.signup = async (req, res)=>{
   try{
