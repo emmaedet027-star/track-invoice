@@ -9,12 +9,12 @@ exports.createClient = async (req, res)=>{
      name: name,
      email: email,
      address: address,
-     tasktype: task,
+     tasktype: tasktype,
      status 
 );
 const user = await User.findOne({_id: req.userId});
-user.usage.clientsCreated = ++;
-await res.status(200);  }
+user.usage.clientsCreated++;
+await res.status(200).json({client});  }
   catch(err){
   console.log(err);
 } 
